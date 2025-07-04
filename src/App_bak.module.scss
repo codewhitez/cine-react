@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    padding: 2rem;
+}
+
+.sidebar {
+    width: 200px;
+    margin-right: 2rem;
+}
+
+.main {
+    flex: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+}
+
+.loadMoreContainer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.loadMore {
+    padding: 0.8rem 1.5rem;
+    background: #222;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

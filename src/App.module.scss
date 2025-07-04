@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    padding: 2rem;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    margin-right: 2rem;
+}
+
+.main {
+    flex: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2.5rem;
+}
+
+.loadMore {
+    margin: 2rem auto;
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #222;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
