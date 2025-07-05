@@ -29,7 +29,7 @@ async function setup() {
     app.use(base, sirv("dist/client", { extensions: [] }));
     console.log("After sirv dist/client");
 
-    app.use("/*", async (req, res) => {
+    app.use("*all", async (req, res) => {
         try {
             const url = req.originalUrl.replace(base, "");
             let template = templateHtml;
@@ -84,6 +84,8 @@ async function setup() {
             res.status(500).end(e.stack);
         }
     });
+
+    console.log("Server setup done");
 }
 
 // Ensure setup is run before handler is used
