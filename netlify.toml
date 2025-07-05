@@ -8,7 +8,7 @@
   included_files = ["./dist/client/index.html", "./dist/server/entry-server.js"]
 
 [[redirects]]
-  from = "/*"
+  from = "/index.html"
   to = "/.netlify/functions/server"
   status = 200
   force = true
