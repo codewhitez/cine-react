@@ -17,7 +17,6 @@ let app;
 // Async setup function
 async function setup() {
     templateHtml = await fs.readFile("dist/client/index.html", "utf-8");
-    console.log("Template HTML loaded with dist/client/index.html");
 
     compression = (await import("compression")).default;
     sirv = (await import("sirv")).default;
@@ -27,17 +26,16 @@ async function setup() {
 
     console.log("base ", base);
     app.use(base, sirv("dist/client", { extensions: [] }));
-    console.log("After sirv dist/client");
 
     app.use("*all", async (req, res) => {
         try {
             const url = req.originalUrl.replace(base, "");
             let template = templateHtml;
 
-            console.log("Before render function import ");
-            let render = (await import("dist/server/entry-server.js")).render;
+            let render = (await import("./dist/server/entry-server.js")).render;
             console.log(
-                "Render function loaded from dist/server/entry-server.js"
+                "Render function loaded from ./dist/server/entry-server.js ",
+                render
             );
 
             let didError = false;
