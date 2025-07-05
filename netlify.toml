@@ -9,7 +9,7 @@
 
 [[redirects]]
   from = "/"
-  to = "/index.html"
+  to = "/.netlify/functions/server"
   status = 200
   force = true
 
