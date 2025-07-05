@@ -3,6 +3,7 @@ import express from "express";
 import { Transform } from "node:stream";
 import serverless from "serverless-http";
 import { builder } from "@netlify/functions";
+import path from "node:path";
 
 const isProduction = true; // Netlify Functions are always production
 const base = process.env.BASE || "/";
