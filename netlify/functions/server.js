@@ -16,7 +16,7 @@ let app;
 
 // Async setup function
 async function setup() {
-    templateHtml = await fs.readFile("../../dist/client/index.html", "utf-8");
+    templateHtml = await fs.readFile("./dist/client/index.html", "utf-8");
     compression = (await import("compression")).default;
     sirv = (await import("sirv")).default;
 
@@ -28,8 +28,7 @@ async function setup() {
         try {
             const url = req.originalUrl.replace(base, "");
             let template = templateHtml;
-            let render = (await import("../../dist/server/entry-server.js"))
-                .render;
+            let render = (await import("./dist/server/entry-server.js")).render;
 
             let didError = false;
 
