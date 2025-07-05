@@ -8,6 +8,12 @@
   included_files = ["./dist/client/index2.html", "./dist/server/entry-server.js"]
 
 [[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/index.html"
   to = "/.netlify/functions/server"
   status = 200
