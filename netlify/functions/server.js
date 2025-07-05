@@ -28,7 +28,7 @@ async function setup() {
         try {
             const url = req.originalUrl.replace(base, "");
             let template = templateHtml;
-            let render = (await import("./dist/server/entry-server.js")).render;
+            let render = (await import("dist/server/entry-server.js")).render;
 
             let didError = false;
 
