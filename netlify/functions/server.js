@@ -16,9 +16,7 @@ let app;
 
 // Async setup function
 async function setup() {
-    const indexPath = path.join(__dirname, "dist/client/index.html");
-    console.log(`index.html path: ${indexPath}`);
-    templateHtml = await fs.readFile(indexPath, "utf-8");
+    templateHtml = await fs.readFile("../../dist/client/index.html", "utf-8");
     compression = (await import("compression")).default;
     sirv = (await import("sirv")).default;
 
