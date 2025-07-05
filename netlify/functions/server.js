@@ -29,10 +29,12 @@ async function setup() {
     app.use(base, sirv("dist/client", { extensions: [] }));
     console.log("After sirv dist/client");
 
-    app.use("*", async (req, res) => {
+    app.use("/*", async (req, res) => {
         try {
             const url = req.originalUrl.replace(base, "");
             let template = templateHtml;
+
+            console.log("Before render function import ");
             let render = (await import("dist/server/entry-server.js")).render;
             console.log(
                 "Render function loaded from dist/server/entry-server.js"
