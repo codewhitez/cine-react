@@ -24,7 +24,6 @@ async function setup() {
     app = express();
     app.use(compression());
 
-    console.log("base ", base);
     app.use(base, sirv("dist/client", { extensions: [] }));
 
     app.use("*all", async (req, res) => {
@@ -34,10 +33,6 @@ async function setup() {
 
             let render = (await import("../../dist/server/entry-server.js"))
                 .render;
-            console.log(
-                "Render function loaded from ../../dist/server/entry-server.js",
-                render
-            );
 
             let didError = false;
 
@@ -83,8 +78,6 @@ async function setup() {
             res.status(500).end(e.stack);
         }
     });
-
-    console.log("Server setup done");
 }
 
 // Ensure setup is run before handler is used
