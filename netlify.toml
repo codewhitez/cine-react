@@ -2,7 +2,7 @@
   command = "npm run build"
   publish = "dist/client"
 
-[[functions]]
+[functions]
   directory = "netlify/functions"
 
 [[redirects]]
