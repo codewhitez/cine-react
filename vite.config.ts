@@ -16,7 +16,22 @@ function createRedirectsPlugin() {
     };
 }
 
+function renameIndexPlugin() {
+    return {
+        name: "rename-index",
+        closeBundle() {
+            const outDir = path.resolve(__dirname, "dist/client");
+            // Rename index.html to index2.html if it exists
+            const indexHtml = path.join(outDir, "index.html");
+            const index2Html = path.join(outDir, "index2.html");
+            if (fs.existsSync(indexHtml)) {
+                fs.renameSync(indexHtml, index2Html);
+            }
+        },
+    };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [react(), createRedirectsPlugin()],
+    plugins: [react(), createRedirectsPlugin(), renameIndexPlugin()],
 });

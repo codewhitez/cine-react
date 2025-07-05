@@ -10,7 +10,7 @@ const ABORT_DELAY = 10000;
 
 // Cached production assets
 const templateHtml = isProduction
-    ? await fs.readFile("./dist/client/index.html", "utf-8")
+    ? await fs.readFile("./dist/client/index2.html", "utf-8")
     : "";
 
 // Create http server

@@ -16,7 +16,7 @@ let app;
 
 // Async setup function
 async function setup() {
-    templateHtml = await fs.readFile("dist/client/index.html", "utf-8");
+    templateHtml = await fs.readFile("dist/client/index2.html", "utf-8");
 
     compression = (await import("compression")).default;
     sirv = (await import("sirv")).default;
