@@ -3,7 +3,7 @@ import express from "express";
 import { Transform } from "node:stream";
 import serverless from "serverless-http";
 import { builder } from "@netlify/functions";
-import path from "node:path";
+import path from "path";
 
 const isProduction = true; // Netlify Functions are always production
 const base = process.env.BASE || "/";
@@ -16,7 +16,7 @@ let app;
 
 // Async setup function
 async function setup() {
-    const indexPath = path.join(process.cwd(), "dist/client/index.html");
+    const indexPath = path.join(__dirname, "dist/client/index.html");
     console.log(`index.html path: ${indexPath}`);
     templateHtml = await fs.readFile(indexPath, "utf-8");
     compression = (await import("compression")).default;
