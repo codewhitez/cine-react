@@ -32,9 +32,10 @@ async function setup() {
             const url = req.originalUrl.replace(base, "");
             let template = templateHtml;
 
-            let render = (await import("./dist/server/entry-server.js")).render;
+            let render = (await import("../../dist/server/entry-server.js"))
+                .render;
             console.log(
-                "Render function loaded from ./dist/server/entry-server.js ",
+                "Render function loaded from ../../dist/server/entry-server.js",
                 render
             );
 
