@@ -1,18 +1,13 @@
 //import "./App.css";
-import { Suspense, lazy } from "react";
+//import { Suspense, lazy } from "react";
+import MovieGrid from "./components/MovieGrid";
 
 // Works also with SSR as expected
 // const Card = lazy(() => import("./components/Card"));
-const MovieGrid = lazy(() => import("./components/MovieGrid"));
+//const MovieGrid = lazy(() => import("./components/MovieGrid"));
 
 function App() {
-    return (
-        <Suspense
-            fallback={<p style={{ padding: "2rem" }}>Loading CineView...</p>}
-        >
-            <MovieGrid />
-        </Suspense>
-    );
+    return <MovieGrid />;
 }
 
 export default App;
